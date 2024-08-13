@@ -39,5 +39,6 @@ def home():
     return '<h1>Still working on ...</h1>'
 
 if __name__ == "__main__":
-    app.run()
     Scheduler.Clock.Run()
+    app.run()
+    

@@ -7,6 +7,7 @@ def timed_job():
     '''
     url = 'https://jufaics-server.onrender.com'
     with urllib.request.urlopen(url) as conn:
+        print('This job is run every fifteen minutes.')
         pass
 
 
