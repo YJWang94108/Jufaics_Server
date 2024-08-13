@@ -1,4 +1,4 @@
-from apscheduler.schedulers.blocking import BackgroundScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 import urllib
 
 def timed_job():
@@ -11,7 +11,7 @@ def timed_job():
 
 
 def Run():
-    
+
     sched = BackgroundScheduler()
     sched.add_job(timed_job, 'interval', minutes=20)
     sched.start()
