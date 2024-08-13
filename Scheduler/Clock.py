@@ -3,7 +3,7 @@ import urllib
 
 def timed_job():
     '''
-    This job is run every five minutes.
+    This job is run every fifteen minutes.
     '''
     url = 'https://jufaics-server.onrender.com'
     with urllib.request.urlopen(url) as conn:
@@ -13,5 +13,5 @@ def timed_job():
 def Run():
 
     sched = BackgroundScheduler()
-    sched.add_job(timed_job, 'interval', minutes=20)
+    sched.add_job(timed_job, 'interval', minutes=15)
     sched.start()
