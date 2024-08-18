@@ -4,6 +4,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage
 import Line.Message
+import Schedule, threading
 
 app = Flask(__name__)
 
@@ -38,5 +39,9 @@ def home():
     return '<h1>Still working on ...</h1>'
 
 if __name__ == "__main__":
-    app.run()
+    # Clock
+    t = threading.Thread(target=Schedule.Run())
+    t.start()
+
+    app.run(debug=True)
     
